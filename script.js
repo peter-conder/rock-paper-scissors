@@ -25,4 +25,34 @@ function getComputerChoice() {
 
 };
 //So currently this function works perfectly. Right now it's printing the computer's choice to the console, whereas in the actual game I'm going to have to take that variable and input it into more functions.
+
 getComputerChoice();
+
+
+/* use a prompt to get a string. prompt input must be equal to string input.
+    Ok so for this I need to have a prompt pop up, where the user can input 'Rock', 'Paper' or 'Scissors.' Then, if what they input is equal to the strings rock, paper or scissors, the playerChoice variable will change to match. I think the easiest way to do this is to set up a simple if-else if-else statement.
+        PROMPT user
+        IF prompt:
+            is 'Rock': playerChoice = Rock
+            is 'Scissors': playerCHoice = Scissors
+            is 'Paper': playerChoice = Paper
+
+*/
+
+function getPlayerChoice() {
+    let playerPrompt = prompt("What do you play?");
+    let playerChoice;
+
+    if (playerPrompt === 'rock') {
+        let playerChoice = 'Rock';
+        return console.log(playerChoice);
+    } else if (playerPrompt === 'paper') {
+        let playerChoice = 'Paper';
+        return console.log(playerChoice);
+    } else if (playerPrompt === 'scissors') {
+        let playerChoice = 'Scissors';
+        return console.log(playerChoice);
+    } else {return console.log('Invalid Choice! :c'); }
+}
+
+getPlayerChoice();
