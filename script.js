@@ -60,3 +60,69 @@ function getPlayerChoice() {
 }
 
 getPlayerChoice();
+
+/*
+    Compare humanChoice and computerChoice and decide who wins the round
+
+    How do I actually get this to work? let's say that everything is handled from the human's point of view. So:
+        IF human plays 'Rock'
+            IF bot plays Rock, result is tie
+            ELSE IF bot plays Paper, result is loss
+            ELSE IF bot plays Scissors, result is win
+        ELSE IF human plays 'Paper'
+            IF bot plays Rock, result is win
+            ELSE IF bot plays Paper, result is tie
+            ELSE IF bot plays Scissors, result is loss
+        ELSE IF human plays 'Scissors'
+            IF bot plays Rock, result is loss
+            ELSE IF bot plays Paper, result is win
+            ELSE IF bot plays Scissors, result is tie
+        Print a string to the console
+        Increment humanScore or computerScore values 
+*/
+
+function playRound(playerChoice, computerChoice) {
+    //defines game logic using humanChoice and computerChoice
+    let result;
+    if (playerChoice === 'Rock') {
+        if (computerChoice === 'Rock') {
+            let result = 'tie';
+            return console.log("Tie!")
+        } else if (computerChoice === 'Paper') {
+            let result = 'loss';
+            return console.log('You lose!');
+        } else if (computerChoice === 'Scissors') {
+            let result = 'win';
+            return console.log('You win!');
+        }
+    } else if (playerChoice === 'Paper') {
+        if (computerChoice === 'Rock') {
+            let result = 'win';
+            return console.log("You win!")
+        } else if (computerChoice === 'Paper') {
+            let result = 'tie';
+            return console.log('Tie!');
+        } else if (computerChoice === 'Scissors') {
+            let result = 'lose';
+            return console.log('You lose!');
+        }
+
+    } else if (playerChoice === 'Scissors') {
+        if (computerChoice === 'Rock') {
+            let result = 'lose';
+            return console.log("You lose!")
+        } else if (computerChoice === 'Paper') {
+            let result = 'win';
+            return console.log('You win!');
+        } else if (computerChoice === 'Scissors') {
+            let result = 'tie';
+            return console.log('Tie!');
+        }
+
+    }
+}
+
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
+playRound(playerSelection, computerSelection);
