@@ -1,3 +1,7 @@
+let humanScore = 0;
+let computerScore = 0;
+
+
 /* use random numbers to determine strings
     GENERATE random number as a *random*
     MULTIPLY by 100
