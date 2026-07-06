@@ -16,18 +16,18 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerPrompt = prompt("What do you play?");
-    if (playerPrompt === 'rock') {
+    if (playerPrompt.toLowerCase() === 'rock'.toLowerCase) {
         return "Rock";
-    } else if (playerPrompt === 'paper') {
+    } else if (playerPrompt.toLowerCase === 'paper'.toLowerCase) {
         return "Paper";
-    } else if (playerPrompt === 'scissors') {
+    } else if (playerPrompt.toLowerCase === 'scissors'.toLowerCase) {
         return "Scissors";
     } else {return console.log('Invalid Choice! :c'); }
 }
 
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
 
 
 function playGame() {
@@ -68,17 +68,21 @@ function playRound(playerChoice, computerChoice) {
      }
     }
 playRound(playerSelection, computerSelection);
-getComputerChoice();
-getPlayerChoice();
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 playRound(playerSelection, computerSelection);
-getComputerChoice();
-getPlayerChoice();
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 playRound(playerSelection, computerSelection);
-getComputerChoice();
-getPlayerChoice();
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 playRound(playerSelection, computerSelection);
-getComputerChoice();
-getPlayerChoice();
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 playRound(playerSelection, computerSelection);
 }
 playGame();
