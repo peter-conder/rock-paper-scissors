@@ -14,23 +14,20 @@ let computerScore = 0;
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 100);
 
-    let computerChoice;
 
     if (0 <= randomNumber && randomNumber <= 33) {
-        let computerChoice = "Rock";
-        return console.log(computerChoice); 
+        return "Rock"; 
     } else if (34 <= randomNumber && randomNumber <= 66) {
-        let computerChoice = "Paper";
-        return console.log(computerChoice); 
+        return "Paper"; 
     } else {
-        let computerChoice = "Scissors";
-        return console.log(computerChoice);
+        return "Scissors";
     }
 
 };
-//So currently this function works perfectly. Right now it's printing the computer's choice to the console, whereas in the actual game I'm going to have to take that variable and input it into more functions.
 
-getComputerChoice();
+/* So currently this function works perfectly. Right now it's printing the computer's choice to the console, whereas in the actual game I'm going to have to take that variable and input it into more functions. */
+
+//getComputerChoice();
 
 
 /* use a prompt to get a string. prompt input must be equal to string input.
@@ -45,21 +42,16 @@ getComputerChoice();
 
 function getPlayerChoice() {
     let playerPrompt = prompt("What do you play?");
-    let playerChoice;
-
     if (playerPrompt === 'rock') {
-        let playerChoice = 'Rock';
-        return console.log(playerChoice);
+        return "Rock";
     } else if (playerPrompt === 'paper') {
-        let playerChoice = 'Paper';
-        return console.log(playerChoice);
+        return "Paper";
     } else if (playerPrompt === 'scissors') {
-        let playerChoice = 'Scissors';
-        return console.log(playerChoice);
+        return "Scissors";
     } else {return console.log('Invalid Choice! :c'); }
 }
 
-getPlayerChoice();
+//getPlayerChoice();
 
 /*
     Compare humanChoice and computerChoice and decide who wins the round
@@ -126,3 +118,8 @@ const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 playRound(playerSelection, computerSelection);
+
+/* so currently nothing is happening when the computer and I make our selections. this might have to do with the variables that have been written, specifically their scope. I need to have playerChoice and computerChoice taken out of their respective functions and put into playRound. I need to declare playerChoice and computerChoice as global variables and then influence them with the functions. */
+
+/* Yes!! it's working now. However, I currently am inputting twice, which shouldn't be happening.
+Actually I think the whole script is running twice. hang on. I didn't need to actually use the Choice functions on their own because they are being called by playRound.*/
