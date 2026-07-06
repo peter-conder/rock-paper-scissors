@@ -1,6 +1,3 @@
-let playerScore = 0;
-let computerScore = 0;
-
 
 
 function getComputerChoice() {
@@ -28,60 +25,60 @@ function getPlayerChoice() {
     } else {return console.log('Invalid Choice! :c'); }
 }
 
-function playRound(playerChoice, computerChoice) {
-    if (playerChoice === 'Rock') {
-        if (computerChoice === 'Rock') {
-            console.log('you tied');
-            console.log(playerScore, computerScore);
-            return 'tie';
-        } else if (computerChoice === 'Scissors') {
-            console.log('you won');
-            console.log(playerScore, computerScore);
-            playerScore++;
-            return 'win';
-        } else if (computerChoice === 'Paper') {
-            console.log('you lost');
-            computerScore++;
-            console.log(playerScore, computerScore);
-            return 'loss';
-        }
-    } else if (playerChoice === 'Paper') {
-        if (computerChoice === 'Rock') {
-            console.log('you won');
-            playerScore++;
-            console.log(playerScore, computerScore);
-            return 'win';
-        } else if (computerChoice === 'Paper') {
-            console.log('you tied');
-            console.log(playerScore, computerScore);
-            return 'tie';
-        } else if (computerChoice === 'Scissors') {
-            console.log('you lost');
-            computerScore++;
-            console.log(playerScore, computerScore);
-            return 'loss';
-        }
-
-    } else if (playerChoice === 'Scissors') {
-        if (computerChoice === 'Rock') {
-            console.log('you lost');
-            computerScore++;
-            console.log(playerScore, computerScore);
-            return 'loss';
-        } else if (computerChoice === 'Paper') {
-            console.log('you won');
-            playerScore++;
-            console.log(playerScore, computerScore);
-            return 'win';
-        } else if (computerChoice === 'Scissors') {
-            console.log('you tied');
-            console.log(playerScore, computerScore);
-            return 'tie';
-        }
-     }
-    }
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
+
+function playGame() {
+let playerScore = 0;
+let computerScore = 0;
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === 'Rock') {
+        if (computerChoice === 'Rock') {
+            return console.log('you tied', playerScore, computerScore);
+        } else if (computerChoice === 'Scissors') {
+            playerScore++;
+            return console.log('you won', playerScore, computerScore);
+        } else if (computerChoice === 'Paper') {
+            computerScore++;
+            return console.log('you lost', playerScore, computerScore);
+        }
+    } else if (playerChoice === 'Paper') {
+        if (computerChoice === 'Rock') {
+            playerScore++;
+            return console.log('you won', playerScore, computerScore);
+        } else if (computerChoice === 'Paper') {
+            return console.log('you tied', playerScore, computerScore);
+        } else if (computerChoice === 'Scissors') {
+            computerScore++;
+            return console.log('you lost', playerScore, computerScore);
+        }
+
+    } else if (playerChoice === 'Scissors') {
+        if (computerChoice === 'Rock') {
+            computerScore++;
+            return console.log('you lost', playerScore, computerScore);
+        } else if (computerChoice === 'Paper') {
+            playerScore++;
+            return console.log('you won', playerScore, computerScore);
+        } else if (computerChoice === 'Scissors') {
+            return console.log('you tied', playerScore, computerScore);
+        }
+     }
+    }
 playRound(playerSelection, computerSelection);
+getComputerChoice();
+getPlayerChoice();
+playRound(playerSelection, computerSelection);
+getComputerChoice();
+getPlayerChoice();
+playRound(playerSelection, computerSelection);
+getComputerChoice();
+getPlayerChoice();
+playRound(playerSelection, computerSelection);
+getComputerChoice();
+getPlayerChoice();
+playRound(playerSelection, computerSelection);
+}
+playGame();
