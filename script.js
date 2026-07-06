@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 100);
 
@@ -27,46 +28,58 @@ function getPlayerChoice() {
     } else {return console.log('Invalid Choice! :c'); }
 }
 
-
-
 function playRound(playerChoice, computerChoice) {
-    let result;
     if (playerChoice === 'Rock') {
         if (computerChoice === 'Rock') {
-            let result = 'tie';
-        } else if (computerChoice === 'Paper') {
-            let result = 'loss';
+            console.log('you tied');
+            console.log(playerScore, computerScore);
+            return 'tie';
         } else if (computerChoice === 'Scissors') {
-            let result = 'win';
+            console.log('you won');
+            console.log(playerScore, computerScore);
+            playerScore++;
+            return 'win';
+        } else if (computerChoice === 'Paper') {
+            console.log('you lost');
+            computerScore++;
+            console.log(playerScore, computerScore);
+            return 'loss';
         }
     } else if (playerChoice === 'Paper') {
         if (computerChoice === 'Rock') {
-            let result = 'win';
+            console.log('you won');
+            playerScore++;
+            console.log(playerScore, computerScore);
+            return 'win';
         } else if (computerChoice === 'Paper') {
-            let result = 'tie';
+            console.log('you tied');
+            console.log(playerScore, computerScore);
+            return 'tie';
         } else if (computerChoice === 'Scissors') {
-            let result = 'lose';
+            console.log('you lost');
+            computerScore++;
+            console.log(playerScore, computerScore);
+            return 'loss';
         }
 
     } else if (playerChoice === 'Scissors') {
         if (computerChoice === 'Rock') {
-            let result = 'lose';
+            console.log('you lost');
+            computerScore++;
+            console.log(playerScore, computerScore);
+            return 'loss';
         } else if (computerChoice === 'Paper') {
-            let result = 'win';
+            console.log('you won');
+            playerScore++;
+            console.log(playerScore, computerScore);
+            return 'win';
         } else if (computerChoice === 'Scissors') {
-            let result = 'tie';
+            console.log('you tied');
+            console.log(playerScore, computerScore);
+            return 'tie';
         }
+     }
     }
-
-    if (result === 'win') {
-        return console.log("You win!");
-    } else if (result === 'lose') {
-        console.log(computerScore);
-        return console.log("You lose!");
-    } else if (result === 'tie') {
-        return console.log("You both picked the same thing. Why");
-    }
-}
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
