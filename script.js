@@ -28,47 +28,72 @@ const computerScoreDisplay = document.getElementById("computerDisplay");
 let gameResult = document.getElementById("resultDisplay");
 
 function playRound(playerChoice, computerChoice) {
+
+
+    //ROCK CHOICE
     if (playerChoice === 'Rock') {
-        if (computerChoice === 'Rock') {
-        return gameResult.textContent = "tie";
-        } else if (computerChoice === 'Scissors') {
+        if (computerChoice === 'Rock') { return gameResult.textContent = "tie"; } 
+        else if (computerChoice === 'Scissors') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            return gameResult.textContent = "win";
-        } else if (computerChoice === 'Paper') {
+            gameResult.textContent = "win"; 
+            if (playerScore === 5) {
+            alert("you won!");
+            } 
+        }
+         else if (computerChoice === 'Paper') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
+            gameResult.textContent = "loss";
+            if (computerScore === 5) { 
+            alert("you lost!");
+             } 
+        } 
 
-            return gameResult.textContent = "loss";
-        }
-    } else if (playerChoice === 'Paper') {
+        //PAPER CHOICE
+        }  else if (playerChoice === 'Paper') {
         if (computerChoice === 'Rock') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            return gameResult.textContent = "win";
+            gameResult.textContent = "win";
+            if (playerScore === 5) {
+            alert("you won!"); 
+            }
         } else if (computerChoice === 'Paper') {
             gameResult.textContent = "tie";
         } else if (computerChoice === 'Scissors') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
-
-            return gameResult.textContent = "loss";
+             gameResult.textContent = "loss"
+            if (computerScore === 5) {
+            alert("you lost!");
+            }
         }
+
+        //SCISSORS CHOICE
 
     } else if (playerChoice === 'Scissors') {
         if (computerChoice === 'Rock') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
-            return gameResult.textContent = "loss";
+            gameResult.textContent = "loss"; 
+            if (computerScore === 5) {
+            alert("you lost!"); 
+
+            }
         } else if (computerChoice === 'Paper') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            return gameResult.textContent = "win";
+            gameResult.textContent = "win"; 
+            if (playerScore === 5) {
+            alert("you won!"); 
+            }
         } else if (computerChoice === 'Scissors') {
             return gameResult.textContent = "tie";
         }
      }
      
+}
 //playRound(playerSelection, computerSelection);
 
 /*computerSelection = getComputerChoice();
@@ -89,9 +114,6 @@ playRound(playerSelection, computerSelection);
     }
 */
 //playGame();
-    }
-
-
 
 let rockButton = document.querySelector(".rock");
 let paperButton = document.querySelector(".paper");
