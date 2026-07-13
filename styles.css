@@ -1,9 +1,31 @@
 body {
-    display: flex;
-    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#everything {
+}
+
+.ring {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  display: inline-block
+
+}
+
+.red {
+    position: absolute;
+    top: 52%;
+    left: 55%;
+}
+
+.green {
+    position: absolute;
+    top: 48%;
+    left: 25%;
+}
 
 .heading {
     align-self: center;
@@ -11,23 +33,20 @@ body {
 }
 
 .score {
+    margin-top: 45px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
     display: flex;
     flex-direction: row;
-    margin: 10px;
-    justify-content: center;
-    gap: 200px;
-    padding: 10px;
-    font-size: 100px;
+    color: aliceblue;
+    gap: 500%;
+    font-size: xx-large;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    justify-content: center;
-    gap: 80px;
-    margin: 40px;
-    padding: 40px;
+    position: absolute;
+    top: 90%;
 }
 
 button {
@@ -35,8 +54,5 @@ button {
 }
 
 #resultDisplay {
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
 }
 

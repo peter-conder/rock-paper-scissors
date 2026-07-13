@@ -36,7 +36,7 @@ function playRound(playerChoice, computerChoice) {
         else if (computerChoice === 'Scissors') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            gameResult.textContent = "win"; 
+            gameResult.textContent = "Rock beats scissors!"; 
             if (playerScore === 5) {
             alert("you won!");
             } 
@@ -44,7 +44,7 @@ function playRound(playerChoice, computerChoice) {
          else if (computerChoice === 'Paper') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
-            gameResult.textContent = "loss";
+            gameResult.textContent = "Paper beats rock!";
             if (computerScore === 5) { 
             alert("you lost!");
              } 
@@ -55,7 +55,7 @@ function playRound(playerChoice, computerChoice) {
         if (computerChoice === 'Rock') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            gameResult.textContent = "win";
+            gameResult.textContent = "Paper beats rock!";
             if (playerScore === 5) {
             alert("you won!"); 
             }
@@ -64,7 +64,7 @@ function playRound(playerChoice, computerChoice) {
         } else if (computerChoice === 'Scissors') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
-             gameResult.textContent = "loss"
+             gameResult.textContent = "Scissors beats paper!"
             if (computerScore === 5) {
             alert("you lost!");
             }
@@ -76,7 +76,7 @@ function playRound(playerChoice, computerChoice) {
         if (computerChoice === 'Rock') {
             computerScore++;
             computerScoreDisplay.textContent = computerScore;
-            gameResult.textContent = "loss"; 
+            gameResult.textContent = "Rock beats scissors!"; 
             if (computerScore === 5) {
             alert("you lost!"); 
 
@@ -84,7 +84,7 @@ function playRound(playerChoice, computerChoice) {
         } else if (computerChoice === 'Paper') {
             playerScore++;
             playerScoreDisplay.textContent = playerScore;
-            gameResult.textContent = "win"; 
+            gameResult.textContent = "Scissors beats paper!"; 
             if (playerScore === 5) {
             alert("you won!"); 
             }
