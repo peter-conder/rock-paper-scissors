@@ -13,7 +13,7 @@ function getComputerChoice() {
     }
 
 };
-
+/*
 function getPlayerChoice() {
     let playerPrompt = prompt("What do you play?");
     if (playerPrompt.toLowerCase() === 'rock'.toLowerCase) {
@@ -23,14 +23,14 @@ function getPlayerChoice() {
     } else if (playerPrompt.toLowerCase === 'scissors'.toLowerCase) {
         return "Scissors";
     } else {return console.log('Invalid Choice! :c'); }
-}
+} */
 
 
-let playerSelection = getPlayerChoice();
+//let playerSelection = getPlayerChoice();
 let computerSelection = getComputerChoice();
 
 
-function playGame() {
+//function playGame() {
 let playerScore = 0;
 let computerScore = 0;
 function playRound(playerChoice, computerChoice) {
@@ -66,23 +66,35 @@ function playRound(playerChoice, computerChoice) {
             return console.log('you tied', playerScore, computerScore);
         }
      }
+     
+//playRound(playerSelection, computerSelection);
+
+/*computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
+playRound(playerSelection, computerSelection);
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
+playRound(playerSelection, computerSelection);
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
+playRound(playerSelection, computerSelection);
+
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
+playRound(playerSelection, computerSelection);
     }
-playRound(playerSelection, computerSelection);
+*/
+//playGame();
+    }
 
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-playRound(playerSelection, computerSelection);
+let rockButton = document.querySelector(".rock");
+let paperButton = document.querySelector(".paper");
+let scissorsButton = document.querySelector(".scissors");
 
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-playRound(playerSelection, computerSelection);
+rockButton.addEventListener("click", () => playRound('Rock', computerSelection));
 
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-playRound(playerSelection, computerSelection);
 
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-playRound(playerSelection, computerSelection);
-}
-playGame();
+paperButton.addEventListener("click", () => playRound('Paper', computerSelection));
+scissorsButton.addEventListener("click",() => playRound('Scissors', computerSelection));
