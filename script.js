@@ -1,8 +1,8 @@
     /**Many problems with this code rn
-     * I still need to display the result of the game to the div under the buttons.
-         * span element is not updating when I click the buttons.
-         * Right now all that needs to be happening is that the span has to update according to what the player and the computer played. Don't worry about score for now.
-     * I need to have the score update
+     * I need to have the score update *dynamically*
+         * update playerscore
+         * make the span element display the score in real time
+         * textContent = score
 */
 
 function getComputerChoice() {
@@ -19,14 +19,11 @@ function getComputerChoice() {
 
 };
 
-
-//let computerSelection = getComputerChoice();
-
 let playerScore = 0;
 let computerScore = 0;
-let resultDisplay;
-document.getElementById("playerDisplay").textContent = playerScore;
-document.getElementById("computerDisplay").textContent = computerScore;
+const playerScoreDisplay = document.getElementById("playerDisplay");
+const computerScoreDisplay = document.getElementById("computerDisplay");
+
 
 let gameResult = document.getElementById("resultDisplay");
 
@@ -36,28 +33,36 @@ function playRound(playerChoice, computerChoice) {
         return gameResult.textContent = "tie";
         } else if (computerChoice === 'Scissors') {
             playerScore++;
+            playerScoreDisplay.textContent = playerScore;
             return gameResult.textContent = "win";
         } else if (computerChoice === 'Paper') {
             computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+
             return gameResult.textContent = "loss";
         }
     } else if (playerChoice === 'Paper') {
         if (computerChoice === 'Rock') {
             playerScore++;
+            playerScoreDisplay.textContent = playerScore;
             return gameResult.textContent = "win";
         } else if (computerChoice === 'Paper') {
             gameResult.textContent = "tie";
         } else if (computerChoice === 'Scissors') {
             computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+
             return gameResult.textContent = "loss";
         }
 
     } else if (playerChoice === 'Scissors') {
         if (computerChoice === 'Rock') {
             computerScore++;
+            computerScoreDisplay.textContent = computerScore;
             return gameResult.textContent = "loss";
         } else if (computerChoice === 'Paper') {
             playerScore++;
+            playerScoreDisplay.textContent = playerScore;
             return gameResult.textContent = "win";
         } else if (computerChoice === 'Scissors') {
             return gameResult.textContent = "tie";
@@ -93,7 +98,5 @@ let paperButton = document.querySelector(".paper");
 let scissorsButton = document.querySelector(".scissors");
 
 rockButton.addEventListener("click", () => playRound('Rock', getComputerChoice()));
-
-
 paperButton.addEventListener("click", () => playRound('Paper', getComputerChoice()));
 scissorsButton.addEventListener("click",() => playRound('Scissors', getComputerChoice()));
